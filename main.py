@@ -34,7 +34,7 @@ async def infer_image(file: UploadFile = File(...)):
     image_filename = f"{uuid.uuid4()}.jpg"
     image_path = os.path.join(SAVE_DIR, image_filename)
     cv2.imwrite(image_path, annotated_image)
-    image_url = f"http://127.0.0.1:8000/{SAVE_DIR}/{image_filename}"
+    image_url = f"https://mpoxaiinfer.onrender.com/{SAVE_DIR}/{image_filename}"
     status = ''
     symptoms = "Rash, fever, sore throat, headache, muscle aches, back pain, low energy, swollen lymph nodes"
     contagiousness = "Yes"
