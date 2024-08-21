@@ -1,0 +1,7 @@
+numpy==1.26.4
+fastapi==0.110.3
+opencv-python==4.8.0.76
+supervision==0.22.0
+uvicorn==0.30.6
+inference==0.16.0
+python-multipart
