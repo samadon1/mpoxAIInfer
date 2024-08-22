@@ -20,6 +20,11 @@ SAVE_DIR = "annotated_images"
 os.makedirs(SAVE_DIR, exist_ok=True)
 app.mount("/annotated_images", StaticFiles(directory=SAVE_DIR), name="annotated_images")
 model = get_model(model_id="monkeypox-project-cnn/3", api_key="g4taHRQJRP1us1B2dBfO")
+
+@app.get("/")
+def read_root():
+    return {"message": "hello mpoxAI"}
+    
 @app.post("/infer/")
 async def infer_image(file: UploadFile = File(...)):
     image_data = await file.read()
